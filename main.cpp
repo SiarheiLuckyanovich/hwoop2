@@ -86,9 +86,8 @@ protected:
     string f_name;
     string f_color;
 public:
-    Fruit (const string name, const string color)
+    Fruit (const string color)
     {
-        f_name = name;
         f_color = color;
     }
     const string& getName() { return f_name; }
@@ -99,21 +98,18 @@ public:
 class Apple : public Fruit
 {
 public:
-
-
-    Apple ( const string name, const string color = "")
-    :  Fruit (name, color)
+    Apple (const string color = "")
+    :  Fruit (color)
     {
         f_name = "apple";
-        f_color = name;
     }
 };
 
 class Banana : public Fruit
 {
 public:
-    Banana ( const string name = "banana", const string color = "yelow")
-    :  Fruit (name, color)
+    Banana (const string color = "yelow")
+    :  Fruit (color)
     {
     }
 };
@@ -122,12 +118,11 @@ class GrannySmith : public Apple
 {
 public:
     string g_name;
-
-    GrannySmith ( const string gname = "GrannySmith ", const string name = "apple", const string color = "green")
-    :  Apple (name, color)
+    GrannySmith (const string color = "green")
+    :  Apple (color)
     {
         f_color = color;
-        f_name = gname + name;
+        f_name = "GrannySmith apple";
     }
 };
 //============================================================================================================
@@ -177,3 +172,5 @@ int main()
 Подумать, как написать данную игру на С++, используя объектно-ориентированное программирование.
 Сколько будет классов в программе? Какие классы будут базовыми, а какие производными?
 Продумать реализацию игры с помощью классов и записать результаты в виде комментария в основном файле сдаваемой работы.*/
+
+//Так как игра карточная, базовый класс - карты. В нем
